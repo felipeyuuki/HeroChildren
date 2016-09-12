@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nameChild: MyString
+  birthDateChild: 2016-09-10
+  mother: 
+  team_id: 
+
+two:
+  nameChild: MyString
+  birthDateChild: 2016-09-10
+  mother: 
+  team_id: 

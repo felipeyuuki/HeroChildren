@@ -1,0 +1,98 @@
+<%= form_for @mother, :html => { :class => "form-horizontal mother" } do |f| %>
+
+  <% if @mother.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@mother.errors.count, "error") %> prohibited this mother from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @mother.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nameMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nameMother, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nameMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :occupationMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :occupationMother, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:occupationMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :maternityLeaveMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select(:maternityLeaveMother, options_for_select([["Sim", "true"], ["Nao", "false"]],@mother.maternityLeaveMother), {include_blank: true}) %>
+    </div>
+    <%=f.error_span(:maternityLeaveMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :addressMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :addressMother, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:addressMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :neighborhood_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :neighborhood_id, @neighborhood.all, :id, :nameNeighborhood, include_blank: true %>
+    </div>
+    <%=f.error_span(:neighborhood_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telephoneMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :telephoneMother, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:telephoneMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :salaryMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :salaryMother, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:salaryMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :salaryFamilyMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :salaryFamilyMother, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:salaryFamilyMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :familyPurseMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select(:familyPurseMother, options_for_select([["Sim", "true"], ["Nao", "false"]],@mother.familyPurseMother), {include_blank: true}) %>
+    </div>
+    <%=f.error_span(:familyPurseMother) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :amountPeopleFamilyMother, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :amountPeopleFamilyMother, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:amountPeopleFamilyMother) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+
+     
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                mothers_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

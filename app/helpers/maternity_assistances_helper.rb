@@ -1,0 +1,2 @@
+module MaternityAssistancesHelper
+end

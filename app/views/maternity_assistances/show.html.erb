@@ -1,0 +1,23 @@
+<%- model_class = MaternityAssistance -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:startDate) %>:</strong></dt>
+  <dd><%= @maternity_assistance.startDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:endDate) %>:</strong></dt>
+  <dd><%= @maternity_assistance.endDate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mother_id) %>:</strong></dt>
+  <dd><%= @maternity_assistance.mother_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              maternity_assistances_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_maternity_assistance_path(@maternity_assistance), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              maternity_assistance_path(@maternity_assistance),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

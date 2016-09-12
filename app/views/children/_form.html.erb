@@ -1,0 +1,55 @@
+<%= form_for @child, :html => { :class => "form-horizontal child" } do |f| %>
+
+  <% if @child.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@child.errors.count, "error") %> prohibited this child from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @child.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nameChild, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nameChild, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nameChild) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :birthDateChild, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :birthDateChild, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:birthDateChild) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+       <%= f.collection_select :mother_id, @mother.all, :id, :nameMother, include_blank: true %>
+    </div>
+    <%=f.error_span(:mother_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :team_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+       <%= f.collection_select :team_id, @team.all, :id, :descriptionTeam, include_blank: true %>
+    </div>
+    <%=f.error_span(:team_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                children_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

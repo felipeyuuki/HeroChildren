@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateRegistration: 2016-09-10
+  noteRegistration: MyString
+  child_id: 
+  mother: 
+  team_id: 
+  nursery_id: 
+
+two:
+  dateRegistration: 2016-09-10
+  noteRegistration: MyString
+  child_id: 
+  mother: 
+  team_id: 
+  nursery_id: 

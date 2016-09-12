@@ -1,0 +1,1 @@
+json.partial! "maternity_assistances/maternity_assistance", maternity_assistance: @maternity_assistance

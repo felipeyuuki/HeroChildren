@@ -1,0 +1,54 @@
+<%- model_class = Mother -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nameMother) %></th>
+      <th><%= model_class.human_attribute_name(:occupationMother) %></th>
+      <th><%= model_class.human_attribute_name(:maternityLeaveMother) %></th>
+      <th><%= model_class.human_attribute_name(:addressMother) %></th>
+      <th><%= model_class.human_attribute_name(:neighborhood_id) %></th>
+      <th><%= model_class.human_attribute_name(:telephoneMother) %></th>
+      <th><%= model_class.human_attribute_name(:salaryMother) %></th>
+      <th><%= model_class.human_attribute_name(:salaryFamilyMother) %></th>
+      <th><%= model_class.human_attribute_name(:familyPurseMother) %></th>
+      <th><%= model_class.human_attribute_name(:amountPeopleFamilyMother) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mothers.each do |mother| %>
+      <tr>
+        <td><%= link_to mother.id, mother_path(mother) %></td>
+        <td><%= mother.nameMother %></td>
+        <td><%= mother.occupationMother %></td>
+        <td><%= mother.maternityLeaveMother %></td>
+        <td><%= mother.addressMother %></td>
+        <td><%= mother.neighborhood_id %></td>
+        <td><%= mother.telephoneMother %></td>
+        <td><%= mother.salaryMother %></td>
+        <td><%= mother.salaryFamilyMother %></td>
+        <td><%= mother.familyPurseMother %></td>
+        <td><%= mother.amountPeopleFamilyMother %></td>
+        <td><%=l mother.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_mother_path(mother), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      mother_path(mother),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_mother_path,
+            :class => 'btn btn-primary' %>

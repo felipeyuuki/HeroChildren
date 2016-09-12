@@ -1,0 +1,48 @@
+<%= form_for @maternity_assistance, :html => { :class => "form-horizontal maternity_assistance" } do |f| %>
+
+  <% if @maternity_assistance.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@maternity_assistance.errors.count, "error") %> prohibited this maternity_assistance from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @maternity_assistance.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :startDate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :startDate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:startDate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :endDate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :endDate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:endDate) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+     <%= f.collection_select :mother_id, @mother.all, :id, :nameMother, include_blank: true %>
+    </div>
+    <%=f.error_span(:mother_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                maternity_assistances_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

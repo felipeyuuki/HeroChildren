@@ -1,0 +1,69 @@
+<%= form_for @registration, :html => { :class => "form-horizontal registration" } do |f| %>
+
+  <% if @registration.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @registration.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :dateRegistration, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :dateRegistration, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:dateRegistration) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :noteRegistration, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :noteRegistration, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:noteRegistration) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :child_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :child_id, @child.all, :id, :nameChild, include_blank: true %>
+    </div>
+    <%=f.error_span(:child_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :mother_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :mother_id, @mother.all, :id, :nameMother, include_blank: true %>
+    </div>
+    <%=f.error_span(:mother_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :team_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :team_id, @team.all, :id, :descriptionTeam, include_blank: true %>
+    </div>
+    <%=f.error_span(:team_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :school_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+     <%= f.collection_select :school_id, @school.all, :id, :nameSchool, include_blank: true %>
+    </div>
+    <%=f.error_span(:school_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                registrations_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

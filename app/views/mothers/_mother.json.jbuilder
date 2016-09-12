@@ -1,0 +1,2 @@
+json.extract! mother, :id, :nameMother, :occupationMother, :maternityLeaveMother, :addressMother, :neighborhood_id, :telephoneMother, :salaryMother, :salaryFamilyMother, :familyPurseMother, :amountPeopleFamilyMother, :created_at, :updated_at
+json.url mother_url(mother, format: :json)

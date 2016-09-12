@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  startDate: 2016-09-10
+  endDate: 2016-09-10
+  mother: 
+
+two:
+  startDate: 2016-09-10
+  endDate: 2016-09-10
+  mother: 
