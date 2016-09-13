@@ -5,10 +5,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nameSchool) %></th>
-      <th><%= model_class.human_attribute_name(:vacanciesSchool) %></th>
-      <th><%= model_class.human_attribute_name(:neighborhood_id) %></th>
+      <th style="width: 2%">ID</th>
+      <th style="width: 25%">Nome</th>
+      <th style="width: 5%">Vagas</th>
+      <th style="width: 25%">Bairro</th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -19,7 +19,7 @@
         <td><%= link_to school.id, school_path(school) %></td>
         <td><%= school.nameSchool %></td>
         <td><%= school.vacanciesSchool %></td>
-        <td><%= school.neighborhood_id %></td>
+        <td><%= school.neighborhood.nameNeighborhood %></td>
         <td><%=l school.created_at, :format => :short  %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -27,7 +27,7 @@
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       school_path(school),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Tem certeza?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>

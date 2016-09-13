@@ -3,7 +3,7 @@
   <% if @child.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@child.errors.count, "error") %> prohibited this child from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@child.errors.count, "erros") %> impedem a Criança de ser salva</h3>
       </div>
       <div class="panel-body">
         <ul>

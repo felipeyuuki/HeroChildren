@@ -29,9 +29,9 @@ class MothersController < ApplicationController
 
     respond_to do |format|
       if @mother.save
-        format.html { redirect_to @mother, notice: 'Mother was successfully created.' }
+        format.html { redirect_to @mother, notice: 'Mãe salva com sucesso' }
         format.json { render :show, status: :created, location: @mother }
-        
+
       else
         format.html { render :new }
         format.json { render json: @mother.errors, status: :unprocessable_entity }
@@ -44,7 +44,7 @@ class MothersController < ApplicationController
   def update
     respond_to do |format|
       if @mother.update(mother_params)
-        format.html { redirect_to @mother, notice: 'Mother was successfully updated.' }
+        format.html { redirect_to @mother, notice: 'Mãe atualizada com sucesso' }
         format.json { render :show, status: :ok, location: @mother }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class MothersController < ApplicationController
   def destroy
     @mother.destroy
     respond_to do |format|
-      format.html { redirect_to mothers_url, notice: 'Mother was successfully destroyed.' }
+      format.html { redirect_to mothers_url, notice: 'Mãe apagada com sucesso' }
       format.json { head :no_content }
     end
   end
@@ -76,6 +76,6 @@ class MothersController < ApplicationController
     def set_neighborhood
 
       @neighborhood = Neighborhood.all
-      
+
     end
 end

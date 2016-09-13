@@ -29,7 +29,7 @@ class ChildrenController < ApplicationController
 
     respond_to do |format|
       if @child.save
-        format.html { redirect_to @child, notice: 'Child was successfully created.' }
+        format.html { redirect_to @child, notice: 'Criança salva com sucesso' }
         format.json { render :show, status: :created, location: @child }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ChildrenController < ApplicationController
   def update
     respond_to do |format|
       if @child.update(child_params)
-        format.html { redirect_to @child, notice: 'Child was successfully updated.' }
+        format.html { redirect_to @child, notice: 'Criança atualizada com sucesso' }
         format.json { render :show, status: :ok, location: @child }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ChildrenController < ApplicationController
   def destroy
     @child.destroy
     respond_to do |format|
-      format.html { redirect_to children_url, notice: 'Child was successfully destroyed.' }
+      format.html { redirect_to children_url, notice: 'Criança apagada com sucesso' }
       format.json { head :no_content }
     end
   end
@@ -70,7 +70,7 @@ class ChildrenController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def child_params
-      params.require(:child).permit(:nameChild, :birthDateChild, :mother, :team_id)
+      params.require(:child).permit(:nameChild, :birthDateChild, :mother_id, :team_id)
     end
     def set_mother_and_team
       @mother = Mother.all

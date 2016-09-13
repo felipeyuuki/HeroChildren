@@ -5,13 +5,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nameChild) %></th>
-      <th><%= model_class.human_attribute_name(:birthDateChild) %></th>
-      <th><%= model_class.human_attribute_name(:mother_id) %></th>
-      <th><%= model_class.human_attribute_name(:team_id) %></th>
+      <th style="width: 2%">ID</th>
+      <th style="width: 20%">Nome</th>
+      <th style="width: 10%">Data de Nascimento</th>
+      <th style="width: 20%">Nome Mãe</th>
+      <th style="width: 5%">Turma</th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <th style="width: 15%; text-align: center">Ações</th>
+
+
+
     </tr>
   </thead>
   <tbody>
@@ -20,16 +23,16 @@
         <td><%= link_to child.id, child_path(child) %></td>
         <td><%= child.nameChild %></td>
         <td><%= child.birthDateChild %></td>
-        <td><%= child.mother_id %></td>
-        <td><%= child.team_id %></td>
-        <td><%=l child.created_at %></td>
+        <td><%= child.mother.nameMother %></td>
+        <td><%= child.team.descriptionTeam%></td>
+        <td><%=l child.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_child_path(child), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       child_path(child),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Tem certeza?')) },
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>

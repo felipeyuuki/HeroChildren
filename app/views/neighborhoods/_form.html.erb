@@ -3,7 +3,7 @@
   <% if @neighborhood.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@neighborhood.errors.count, "error") %> prohibited this neighborhood from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@neighborhood.errors.count, "erros") %> impedem o Bairro de ser salvo</h3>
       </div>
       <div class="panel-body">
         <ul>

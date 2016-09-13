@@ -29,7 +29,7 @@ class NeighborhoodsController < ApplicationController
 
     respond_to do |format|
       if @neighborhood.save
-        format.html { redirect_to @neighborhood, notice: 'Neighborhood was successfully created.' }
+        format.html { redirect_to @neighborhood, notice: 'Bairro salvo com sucesso.' }
         format.json { render :show, status: :created, location: @neighborhood }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class NeighborhoodsController < ApplicationController
   def update
     respond_to do |format|
       if @neighborhood.update(neighborhood_params)
-        format.html { redirect_to @neighborhood, notice: 'Neighborhood was successfully updated.' }
+        format.html { redirect_to @neighborhood, notice: 'Bairro atualizado com sucesso' }
         format.json { render :show, status: :ok, location: @neighborhood }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class NeighborhoodsController < ApplicationController
   def destroy
     @neighborhood.destroy
     respond_to do |format|
-      format.html { redirect_to neighborhoods_url, notice: 'Neighborhood was successfully destroyed.' }
+      format.html { redirect_to neighborhoods_url, notice: 'Bairro apagado com sucesso' }
       format.json { head :no_content }
     end
   end
@@ -75,6 +75,6 @@ class NeighborhoodsController < ApplicationController
     def set_sector
 
       @sector = Sector.all
-      
+
     end
 end
