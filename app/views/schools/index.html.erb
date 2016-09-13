@@ -20,7 +20,7 @@
         <td><%= school.nameSchool %></td>
         <td><%= school.vacanciesSchool %></td>
         <td><%= school.neighborhood_id %></td>
-        <td><%=l school.created_at %></td>
+        <td><%=l school.created_at, :format => :short  %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_school_path(school), :class => 'btn btn-default btn-xs' %>

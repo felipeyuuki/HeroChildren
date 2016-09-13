@@ -18,7 +18,7 @@
         <td><%= link_to neighborhood.id, neighborhood_path(neighborhood) %></td>
         <td><%= neighborhood.nameNeighborhood %></td>
         <td><%= neighborhood.sector_id %></td>
-        <td><%=l neighborhood.created_at %></td>
+        <td><%=l neighborhood.created_at , :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_neighborhood_path(neighborhood), :class => 'btn btn-default btn-xs' %>

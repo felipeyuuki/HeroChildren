@@ -34,7 +34,7 @@
         <td><%= mother.salaryFamilyMother %></td>
         <td><%= mother.familyPurseMother %></td>
         <td><%= mother.amountPeopleFamilyMother %></td>
-        <td><%=l mother.created_at %></td>
+        <td><%=l mother.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_mother_path(mother), :class => 'btn btn-default btn-xs' %>

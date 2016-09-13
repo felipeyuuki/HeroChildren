@@ -20,7 +20,7 @@
         <td><%= team.descriptionTeam %></td>
         <td><%= team.limitChildrenTeam %></td>
         <td><%= team.nurseries_id %></td>
-        <td><%=l team.created_at %></td>
+        <td><%=l team.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_team_path(team), :class => 'btn btn-default btn-xs' %>
