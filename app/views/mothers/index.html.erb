@@ -6,11 +6,11 @@
   <thead>
     <tr>
       <th style="width: 2%">ID</th>
-      <th style="width: 20%">Nome</th>
+      <th style="width: 21%">Nome</th>
       <th style="width: 10%">Profissão</th>
-      <th style="width: 20%">Endereço</th>
-      <th style="width: 10%">Telefone</th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th style="width: 22%">Endereço</th>
+      <th style="width: 15%">Telefone</th>
+      <th style="width: 15%; text-align: center">Criado em</th>
       <th style="width: 15%; text-align: center">Ações</th>
 
     </tr>
@@ -30,7 +30,7 @@
         <td><%=l mother.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_mother_path(mother), :class => 'btn btn-default btn-xs' %>
+                      edit_mother_path(mother), :class => 'btn btn-primary btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       mother_path(mother),
                       :method => :delete,
@@ -44,4 +44,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_mother_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-success' %>

@@ -23,7 +23,7 @@
         <td><%=l team.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_team_path(team), :class => 'btn btn-default btn-xs' %>
+                      edit_team_path(team), :class => 'btn btn-primary btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       team_path(team),
                       :method => :delete,
@@ -37,4 +37,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_team_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-success' %>

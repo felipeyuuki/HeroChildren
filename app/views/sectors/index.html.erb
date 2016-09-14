@@ -5,9 +5,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:codeSector) %></th>
-      <th><%= model_class.human_attribute_name(:descriptionSector) %></th>
+      <th style="width: 5%">ID </th>
+      <th style="width: 15%">Código Setor </th></th>
+      <th style="width: 40%">Descrição </th>
       <th><%= model_class.human_attribute_name(:created_at,) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -21,7 +21,7 @@
         <td><%=l sector.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_sector_path(sector), :class => 'btn btn-default btn-xs' %>
+                      edit_sector_path(sector), :class => 'btn btn-primary btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       sector_path(sector),
                       :method => :delete,
@@ -35,4 +35,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_sector_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-success' %>

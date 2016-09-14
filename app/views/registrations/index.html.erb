@@ -29,7 +29,7 @@
         <td><%=l registration.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_registration_path(registration), :class => 'btn btn-default btn-xs' %>
+                      edit_registration_path(registration), :class => 'btn btn-primary btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       registration_path(registration),
                       :method => :delete,
@@ -43,4 +43,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_registration_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-success' %>

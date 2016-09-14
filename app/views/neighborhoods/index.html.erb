@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:nameNeighborhood) %></th>
-      <th><%= model_class.human_attribute_name(:sector_id) %></th>
+      <th style="width: 30%">Nome </th>
+      <th style="width: 30%">Setor </th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,11 +17,11 @@
       <tr>
         <td><%= link_to neighborhood.id, neighborhood_path(neighborhood) %></td>
         <td><%= neighborhood.nameNeighborhood %></td>
-        <td><%= neighborhood.sector_id %></td>
+        <td><%= neighborhood.sector.descriptionSector %></td>
         <td><%=l neighborhood.created_at , :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_neighborhood_path(neighborhood), :class => 'btn btn-default btn-xs' %>
+                      edit_neighborhood_path(neighborhood), :class => 'btn btn-primary btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       neighborhood_path(neighborhood),
                       :method => :delete,
@@ -35,4 +35,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_neighborhood_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-success' %>
